@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Scala.js+Velocity.js morph application!</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" media="all" rel="stylesheet" type="text/css">    
+  <style type="text/css">
+  body {
+  background-color: #F5F7FA;
+}
+.demo-content {
+ padding: 30px 20px;
+}
+.box {
+  padding: 12px 12px;
+  background-color: #fff;
+  margin-bottom: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 200px;
+  text-align: center;
+  font-family: "Roboto", Arial, sans-serif;
+  border: 1px solid #656D78;
+  color: #656D78;
+  position: relative;
+  box-shadow: 3px 3px 0 0 rgba(0,0,0,0.1);
+  cursor:pointer;
+}
+.box .text {
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+}
+.box .icon {
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  line-height: 45px;
+  opacity: 0;
+  font-size: 21px;
+}
+.play {
+  color: #AAB2BD;
+  font-family: "Roboto", Arial, sans-serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: block;
+  width:50px;
+  margin-bottom: 30px;
+  border-radius: 30px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.play:hover {
+  color: #656D78;
+}
+.ion {
+  margin-right: 5px;
+}
+  </style>
+</head>
+<body>
+
+<!--  velocity start-->
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.2/velocity.min.js'></script> 
+<script src='https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.2/velocity.ui.min.js'></script> 
+
+<div id="button1" class="demo-content">
+  <div class="box with-velocity">    <span class="text">Velocity.js</span>
+    <span class="icon ion ion-checkmark"></span>
+  </div>
+  <a href="#" class="play play-velocity"><span class="ion ion-play"></span> Play</a>
+</div>
+<div id="button2" class="demo-content">
+  <div class="box with-velocity">    <span class="text">Scala.js</span>
+    <span class="icon ion ion-heart"></span>
+  </div>
+  <a href="#" class="play play-velocity"><span class="ion ion-play"></span> Play</a>
+</div>
+
+
+<script type="text/javascript" src="../scala-js-velocity-js-example-fastopt.js"></script>
+<script>
+
+<!--  velocity end -->
+
+    example.Morph().main("button1");
+    example.Morph().main("button2");    
+</script>
+
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Scala.js+Velocity.js UI Pack application!</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
+  <style type="text/css">
+  body{
+   font-family: roboto, arial;  
+   overflow:hidden;
+  }
+  .lorem{
+   text-align:center
+  }
+   .box {
+  color: black;
+  font-size:24px;
+  margin:2px;
+  padding: 10px 16px;
+  border: 2px solid black;
+  background: #9af600;
+  background: linear-gradient(to bottom, #9af600 0%,#71B200 100%);
+  display:block;
+  border-radius: 10px;
+  position:relative;
+  width:100px;
+  height:2.5em;
+  cursor:pointer;  
+}
+
+.centre{
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+
+.column{
+  width: 20%;
+  margin-right: 3%;
+  float: left;
+}
+
+  </style>
+</head>
+<body>
+
+<!--  velocity start-->
+<!--  
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js'></script>
+  -->
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/bluebird/2.10.1/bluebird.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.2/velocity.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.2/velocity.ui.min.js'></script> 
+<p style="display:none" id="title">UI Pack demo showing intro RunSequence and UI Pack animations</p>
+<div>
+1
+</div>
+<div>
+2
+</div>
+<div>
+3
+</div>
+<select id="dataBody-UIPackSelEffect">
+ <option value="" selected="" disabled="">Effect</option>
+ <option value="callout.twirl">callout.twirl (custom registered)</option>
+ <option value="callout.bounce" selected="selected">callout.bounce</option><option value="callout.shake">callout.shake</option><option value="callout.flash">callout.flash</option><option value="callout.pulse">callout.pulse</option><option value="callout.swing">callout.swing</option><option value="callout.tada">callout.tada</option><option value="transition.fadeIn">transition.fadeIn</option><option value="transition.fadeOut">transition.fadeOut</option><option value="transition.flipXIn">transition.flipXIn</option><option value="transition.flipXOut">transition.flipXOut</option><option value="transition.flipYIn">transition.flipYIn</option><option value="transition.flipYOut">transition.flipYOut</option><option value="transition.flipBounceXIn">transition.flipBounceXIn</option><option value="transition.flipBounceXOut">transition.flipBounceXOut</option><option value="transition.flipBounceYIn">transition.flipBounceYIn</option><option value="transition.flipBounceYOut">transition.flipBounceYOut</option><option value="transition.swoopIn">transition.swoopIn</option><option value="transition.swoopOut">transition.swoopOut</option><option value="transition.whirlIn">transition.whirlIn</option><option value="transition.whirlOut">transition.whirlOut</option><option value="transition.shrinkIn">transition.shrinkIn</option><option value="transition.shrinkOut">transition.shrinkOut</option><option value="transition.expandIn">transition.expandIn</option><option value="transition.expandOut">transition.expandOut</option><option value="transition.bounceIn">transition.bounceIn</option><option value="transition.bounceOut">transition.bounceOut</option><option value="transition.bounceUpIn">transition.bounceUpIn</option><option value="transition.bounceUpOut">transition.bounceUpOut</option><option value="transition.bounceDownIn">transition.bounceDownIn</option><option value="transition.bounceDownOut">transition.bounceDownOut</option><option value="transition.bounceLeftIn">transition.bounceLeftIn</option><option value="transition.bounceLeftOut">transition.bounceLeftOut</option><option value="transition.bounceRightIn">transition.bounceRightIn</option><option value="transition.bounceRightOut">transition.bounceRightOut</option><option value="transition.slideUpIn">transition.slideUpIn</option><option value="transition.slideUpOut">transition.slideUpOut</option><option value="transition.slideDownIn">transition.slideDownIn</option><option value="transition.slideDownOut">transition.slideDownOut</option><option value="transition.slideLeftIn">transition.slideLeftIn</option><option value="transition.slideLeftOut">transition.slideLeftOut</option><option value="transition.slideRightIn">transition.slideRightIn</option><option value="transition.slideRightOut">transition.slideRightOut</option><option value="transition.slideUpBigIn">transition.slideUpBigIn</option><option value="transition.slideUpBigOut">transition.slideUpBigOut</option><option value="transition.slideDownBigIn">transition.slideDownBigIn</option><option value="transition.slideDownBigOut">transition.slideDownBigOut</option><option value="transition.slideLeftBigIn">transition.slideLeftBigIn</option><option value="transition.slideLeftBigOut">transition.slideLeftBigOut</option><option value="transition.slideRightBigIn">transition.slideRightBigIn</option><option value="transition.slideRightBigOut">transition.slideRightBigOut</option><option value="transition.perspectiveUpIn">transition.perspectiveUpIn</option><option value="transition.perspectiveUpOut">transition.perspectiveUpOut</option><option value="transition.perspectiveDownIn">transition.perspectiveDownIn</option><option value="transition.perspectiveDownOut">transition.perspectiveDownOut</option><option value="transition.perspectiveLeftIn">transition.perspectiveLeftIn</option><option value="transition.perspectiveLeftOut">transition.perspectiveLeftOut</option><option value="transition.perspectiveRightIn">transition.perspectiveRightIn</option><option value="transition.perspectiveRightOut">transition.perspectiveRightOut</option>
+</select>
+<select id="dataBody-UIPackSelDuration">
+							<option value="" selected="" disabled="">Duration</option>
+							<option value="200">200ms</option>							
+							<option value="500">500ms</option>
+							<option value="1000">1s</option>
+							<option value="2000">2s</option>
+						</select>
+<select id="dataBody-UIPackSelStagger">
+							<option value="" selected="" disabled="">Stagger</option>
+							<option value="">false</option>
+							<option value="100">100ms</option>
+							<option value="200">200ms</option>
+							<option value="300">300ms</option>
+						</select>
+<select id="dataBody-UIPackSelDrag">
+							<option value="false" selected="" disabled="">Drag</option>
+							<option value="false">false</option>
+							<option value="true">true</option>
+						</select>						
+<button id="dataBody-UIPackFire">Animate</button>
+<div><BR/></div>
+ <div class="lorem">
+  1) Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+</div>
+ <div class="lorem">
+  2) Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+</div>
+ <div class="lorem">
+  3) Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+</div>
+ <div class="lorem">
+  4) Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+</div>
+ <div class="lorem">
+  5) Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+</div>
+<div style="width:200px;margin:auto;" class="lorem box"><div class="centre">Hello</div></div>
+<div><BR/></div>
+ <div class="lorem column">
+  1) Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+</div>
+ <div class="lorem column">
+  2) Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+</div>
+ <div class="lorem column">
+  3) Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+</div>
+ 
+
+<button style="width:300px;height:100px;margin-left:20px" id="dataBody-UIPackFireSelf">Animate on self</button>
+<script type="text/javascript" src="../scala-js-velocity-js-example-fastopt.js"></script>
+<script>
+<!--  velocity end -->
+
+//	var mydiv=document.getElementById('mydiv')
+var demo=example.UIPack().main();    
+</script>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Scala.js+Velocity.js sample application!</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
+  <style type="text/css">
+  body{
+   font-family: roboto, arial
+  }
+
+  </style>
+</head>
+<body>
+
+<!--  velocity start-->
+<!--  
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js'></script>
+  -->
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/bluebird/2.10.1/bluebird.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.2/velocity.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.2/velocity.ui.min.js'></script>  
+
+<p>SVG Demo - Hover over the circles. Press out/in to move circles</p>
+<div><button id="outButton">Out</button><button id="inButton">In</button></div>
+<svg id="mysvg" version="1.1" width="1200" height="500" xmlns="http://www.w3.org/2000/svg">
+ <circle id="circleLeft" cx="200" cy="100" r="30" style="fill: red"/> 
+ <circle id="circleRight" cx="200" cy="100" r="30" style="fill: orange"/>
+ <image id="doge" x="20" y="20" width="80" height="80"
+     xlink:href="http://imgur.com/kOhF3kz.png" />
+</svg>
+
+<script type="text/javascript" src="../scala-js-velocity-js-example-fastopt.js"></script>
+<script>
+
+<!--  velocity end -->
+
+	var mysvg=document.getElementById('mysvg')
+    var demo=example.SVG().main(mysvg);    
+</script>
+
+</body>
+</html>

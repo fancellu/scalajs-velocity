@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Scala.js+Velocity.js sample application!</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/> 
+  <style type="text/css">
+  body{
+   font-family: roboto, arial
+  }
+#field {
+  position:relative;
+  
+  height: 100%;
+  width:100%;
+  text-align: center;
+  vertical-align: middle;  
+}
+  
+ .box {
+  color: black;
+  font-size:24px;
+  margin:2px;
+  padding: 10px 16px;
+  border: 2px solid black;
+  background: #9af600;
+  background: linear-gradient(to bottom, #9af600 0%,#71B200 100%);
+  display:block;
+  border-radius: 10px;
+  position:relative;
+  width:100px;
+  height:2.5em;
+  cursor:pointer;  
+}
+
+.centre{
+	position: absolute;
+    top: 50%;
+    left: 50%;
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+
+  </style>
+</head>
+<body>
+
+<!--  velocity start-->
+<!--  
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js'></script>
+  -->
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/bluebird/2.10.1/bluebird.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/velocity/1.2.2/velocity.min.js'></script> 
+
+<p>Demo of lots of functionality, mostly to show developers how to achieve certain effects</p>
+<div id="field">
+ <div class="box" id="mydiv" >Click to move</div>
+ <div class="box" id="mydiv2" style="width:140px;"><div class="centre">Click to toggle</div></div>
+ <div class="box" id="mydiv3" >Click to shake</div>
+ <div class="box" id="mydiv4" style="opacity:0;"><div class="centre">FadeIn/Out</div></div>
+ 
+ <div class="lorem">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+</div>
+<div class="lorem">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+</div>
+<div class="lorem">
+  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+</div>
+ 
+ <span class="box" id="mydiv5" style="" ><div class="centre">Hook</div></span>
+ <div class="box" id="mydiv6" ><div class="centre">Promise</div></div>
+ 
+</div>
+<script type="text/javascript" src="../scala-js-velocity-js-example-fastopt.js"></script>
+<script>
+
+<!--  velocity end -->
+
+	var mydiv=document.getElementById('mydiv')
+    var demo=example.Vel1().main(mydiv);    
+</script>
+
+</body>
+</html>
