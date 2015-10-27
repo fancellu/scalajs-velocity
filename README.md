@@ -3,6 +3,10 @@
 
 ## Scala.js bindings for velocity.js and example applications 
 
+To use as a library, just pull in from
+
+[https://jitpack.io/#fancellu/scalajs-velocity](https://jitpack.io/#fancellu/scalajs-velocity)
+
 [![Build Status](https://travis-ci.org/fancellu/scalajs-velocity.svg?branch=master)](https://travis-ci.org/fancellu/scalajs-velocity)
 
 Example apps showing the use of [Scala.js](http://www.scala-js.org/) with [Velocity.js](http://julian.com/research/velocity/) 
