@@ -3,6 +3,8 @@
 
 ## Scala.js bindings for velocity.js and example applications 
 
+[![Build Status](https://travis-ci.org/fancellu/scalajs-velocity.svg?branch=master)](https://travis-ci.org/fancellu/scalajs-velocity)
+
 Example apps showing the use of [Scala.js](http://www.scala-js.org/) with [Velocity.js](http://julian.com/research/velocity/) 
 The bindings for Velocity.js are in `com.felstar.scalajs.velocity`
 
